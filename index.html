@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Find your film</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark">
+    <header class="hero">
+      <h1>Find your film</h1>
+      <a class="nav-link" href="watchlist.html">My Watchlist</a>
+    </header>
+
+    <main class="search-page">
+      <form id="searchForm" class="search-bar" onsubmit="return false;">
+        <span class="icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Blade Runner" />
+        <button type="submit">Search</button>
+      </form>
+
+      <section class="results-wrap">
+        <div class="placeholder">
+          <span class="icon">🎬</span>
+          <p>Start exploring</p>
+        </div>
+        <div id="results" class="results"></div>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
