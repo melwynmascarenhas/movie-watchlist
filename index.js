@@ -16,11 +16,19 @@ searchForm.addEventListener("submit", async () => {
     `https://www.omdbapi.com/?apikey=d0e83a1e&s=${query}`
   );
   const data = await response.json();
+  console.log(data);
 
   let movieCards = [];
 
-  //make fetch request using id of each movie to get detailed information
-  if (data.Response === "True") {
+  if (data.Response === "False") {
+    resultsPlaceholder.style.display = "none";
+    resultsEl.innerHTML = `
+    <div class="placeholder">
+      <p>❌ No movies found for "${query}"</p>
+    </div>
+  `;
+  } else {
+    //make fetch request using id of each movie to get detailed information
     // first remove the placeholder then show custom loader inside results container
     resultsPlaceholder.style.display = "none";
     resultsEl.innerHTML = `
@@ -52,11 +60,8 @@ searchForm.addEventListener("submit", async () => {
       </div>
     `);
     }
+    resultsEl.innerHTML = movieCards.join(" ");
   }
-
-  resultsEl.innerHTML = movieCards.join(" ");
-
-  console.log(resultsEl.innerHTML);
 });
 
 function addToWatchlist(imdbID) {

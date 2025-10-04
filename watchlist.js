@@ -21,7 +21,7 @@ async function loadWatchlist() {
   watchlistEl.innerHTML = `
     <div class="movies-loader">
       <img src="images/loading.svg" class="loading">
-      <p id="upload-text">Loading wishlist...</p>
+      <p>Loading wishlist...</p>
     </div>
   `;
 

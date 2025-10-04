@@ -84,6 +84,7 @@ body.dark {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  color: white;
 }
 
 .movie-card {
